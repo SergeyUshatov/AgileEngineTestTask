@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.8.1"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def allureVersion = "2.13.8"
+
+dependencies {
+
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.3.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-api', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.141.59'
+    implementation group: 'com.codeborne', name: 'selenide', version: '5.18.0'
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: allureVersion
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+
+    testImplementation group: 'org.testng', name: 'testng', version: '7.3.0'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: '2.2'
+}
+
+allure {
+    version = allureVersion
+    autoconfigure = true
+    aspectjweaver = true
+    downloadLink = "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/$allureVersion/allure-commandline-${allureVersion}.zip"
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/runlist/testng.xml'
+    }
+}
+
+test.finalizedBy({ allureReport })
+
+
