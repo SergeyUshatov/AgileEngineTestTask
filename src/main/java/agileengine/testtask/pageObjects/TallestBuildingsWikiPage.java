@@ -4,16 +4,16 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import agileengine.testtask.models.SkyscraperUIModel;
-import agileengine.testtask.models.SkyscraperUIModels;
-import agileengine.testtask.models.SkyscrapersTableHeader;
+import agileengine.testtask.models.skyscraper.SkyscraperUIModel;
+import agileengine.testtask.models.skyscraper.SkyscraperUIModels;
+import agileengine.testtask.models.skyscraper.SkyscrapersTableHeader;
 import org.openqa.selenium.By;
 import agileengine.testtask.utils.PropertyLoader;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static com.codeborne.selenide.Selenide.$$;
-import static agileengine.testtask.models.SkyscrapersTableHeader.*;
+import static agileengine.testtask.models.skyscraper.SkyscrapersTableHeader.*;
 
 public class TallestBuildingsWikiPage {
 

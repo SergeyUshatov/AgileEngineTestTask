@@ -1,4 +1,4 @@
-package agileengine.testtask.models;
+package agileengine.testtask.models.skyscraper;
 
 public enum SkyscrapersTableHeader {
     RANK(1, "Rank"),

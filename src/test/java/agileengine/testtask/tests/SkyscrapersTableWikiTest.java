@@ -1,8 +1,8 @@
 package agileengine.testtask.tests;
 
-import agileengine.testtask.models.SkyscraperUIModels;
-import agileengine.testtask.models.SkyscrapersTableHeader;
-import agileengine.testtask.models.SortOrder;
+import agileengine.testtask.models.skyscraper.SkyscraperUIModels;
+import agileengine.testtask.models.skyscraper.SkyscrapersTableHeader;
+import agileengine.testtask.models.common.SortOrder;
 import agileengine.testtask.pageObjects.TallestBuildingsWikiPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;

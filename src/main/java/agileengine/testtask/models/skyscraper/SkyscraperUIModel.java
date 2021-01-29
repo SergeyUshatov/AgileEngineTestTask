@@ -1,4 +1,4 @@
-package agileengine.testtask.models;
+package agileengine.testtask.models.skyscraper;
 
 import lombok.Builder;
 import lombok.Getter;

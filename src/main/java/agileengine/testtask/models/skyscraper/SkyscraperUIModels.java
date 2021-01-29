@@ -1,4 +1,6 @@
-package agileengine.testtask.models;
+package agileengine.testtask.models.skyscraper;
+
+import agileengine.testtask.models.common.SortOrder;
 
 import java.util.Comparator;
 import java.util.List;
