@@ -34,17 +34,16 @@ public class SkyscraperUIModels {
     }
 
     public List<SkyscraperUIModel> sortBy(SkyscrapersTableHeader header, SortOrder order) {
-        Comparator<SkyscraperUIModel> comparing;
-        switch (header) {
-            case NAME : comparing = Comparator.comparing(SkyscraperUIModel::getName); break;
-            case CITY: comparing = Comparator.comparing(SkyscraperUIModel::getCity); break;
-            case COUNTRY: comparing = Comparator.comparing(SkyscraperUIModel::getCountry); break;
-            case HEIGHT_IN_METERS: comparing = Comparator.comparing(SkyscraperUIModel::getHeightInMetersAsDouble); break;
-            case HEIGHT_IN_FT: comparing = Comparator.comparing(SkyscraperUIModel::getHeightInFtAsInt); break;
-            case FLOORS: comparing = Comparator.comparing(SkyscraperUIModel::getFloorsAsInt); break;
-            case YEAR: comparing = Comparator.comparing(SkyscraperUIModel::getYearAsInt); break;
-            default: comparing = Comparator.comparing(SkyscraperUIModel::getRankAsInt); break;
-        }
+        var comparing = switch (header) {
+            case NAME -> Comparator.comparing(SkyscraperUIModel::getName);
+            case CITY -> Comparator.comparing(SkyscraperUIModel::getCity);
+            case COUNTRY -> Comparator.comparing(SkyscraperUIModel::getCountry);
+            case HEIGHT_IN_METERS -> Comparator.comparing(SkyscraperUIModel::getHeightInMetersAsDouble);
+            case HEIGHT_IN_FT -> Comparator.comparing(SkyscraperUIModel::getHeightInFtAsInt);
+            case FLOORS -> Comparator.comparing(SkyscraperUIModel::getFloorsAsInt);
+            case YEAR -> Comparator.comparing(SkyscraperUIModel::getYearAsInt);
+            default-> Comparator.comparing(SkyscraperUIModel::getRankAsInt);
+        };
 
         return order.equals(SortOrder.asc) ?
                 skyscrapers.stream().sorted(comparing).collect(Collectors.toList()) :

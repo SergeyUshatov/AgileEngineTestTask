@@ -1,4 +1,4 @@
-JDK 11 is required to run tests.
+JDK 15 is required to run tests.
 
 To run tests execute in terminal:
 ```shell
