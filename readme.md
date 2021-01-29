@@ -1,4 +1,5 @@
 JDK 15 is required to run tests.
+Make sure JAVA_HOME is set
 
 To run tests execute in terminal:
 ```shell
